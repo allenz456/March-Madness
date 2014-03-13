@@ -21,6 +21,19 @@ a.anchor{
 	border-top: 1px solid black;
 }
 
+.header-area {
+	padding-left:50px;
+}
+
+p.content {
+	font-size: 20px;
+	font-weight: 200;
+}
+
+.content-list {
+	font-size: 20px;
+	font-weight: 200;
+}
 
 
 

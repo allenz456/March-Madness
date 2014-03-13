@@ -21,7 +21,7 @@
         <div class="navbar-header">
           <a href="#top" class="navbar-brand">
             <img src="img/basketballlogo.png" height="26" width="30">
-            March Madness Prediction
+            Predicting March Madness
           </a>
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
             <span class="icon-bar"></span>
@@ -60,35 +60,60 @@
       <div class="page-header">
         <a class="anchor" id="top"></a>
         <div class="row">
-          <div class="col-lg-8">
-            <h1>Predicting March Madness</h1>
-            <p class="lead">Using Machine Learning Techniques</p>
+          <div class="col-lg-5" style="padding: 15px 15px 0 30px;">
+              <img src="img/NCAA-March-Madness.jpg">
+              <!-- <img src="img/NCAA-March-Madness.jpg" height="150px" width="50px"> -->
           </div>
-          <div class="col-lg-4" style="padding: 15px 15px 0 15px;">
-            <div class="well sponsor">
-              <a href="http://srv.buysellads.com/direct/click/track/yes/x/G6NDC27ICWAI627UCWALYK7UCKBILKJMCT7I5" rel="nofollow" target="_blank">
-                <span style="float: left; margin-right: 15px;">
-                  <img src="http://srv.buysellads.com/direct/image/track/yes/x/G6NDC27ICWAI627UCWALYK7UCKBILKJMCT7I5" width="175" height="135">
-                </span>
-              </a>
-              <a href="http://srv.buysellads.com/direct/click/track/yes/x/G6NDC27ICWAI627UCWALYK7UCKBILKJMCT7I5" rel="nofollow" target="_blank">
-                <h4 style="margin-bottom: 0.4em;">Treehouse</h4>
-                <div class="clearfix">
-                  <p>Learn Web Design, Coding, Mobile App Development &amp; More.</p>
-                  <p>Start Learning for Free!</p>
-                </div>
-              </a>
-            </div>
+          <div class="col-lg-7">
+            <div class='header-area'>
+                <h1>Predicting March Madness</h1>
+                <p class="lead">Using Machine Learning Techniques</p>
+                <p class="content">
+                  EECS 349 - Winter 2014
+                  <br>
+                  <ul class='content-list'>
+                    <li>Rich Chang</li>
+                    <li>Allen Zeng</li>
+                  </ul>
+                </p>
+              </div>
           </div>
         </div>
       </div> <!-- end top -->
-
     <div class="">
       <a class="anchor" id="overview"></a>
         <div class="row">
           <div class="col-lg-12">
-            <h1>overview</h1>
-            <p class="lead">Using Machine Learning Techniques</p>
+            <h1>Overview</h1>
+            <!-- <p class="lead">Using Machine Learning Techniques</p> -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <p class="content">
+              March Madness is a NCAA Division I Basketball tournament that was founded in 1939 and has been played annually since. The tournament traditionally runs from the middle of March to the end of April and features the top 68 teams from around country.
+              <br>
+              <br>
+              Filling out a March Madness bracket has been somewhat of an American tradition, with a history of high offers for anyone who can fill out a perfect bracket. In 2012, Fox Sports offered $1 million to anyone who could do it, and for this upcoming season, Warren Buffett offered $1 billion. Sadly, there has been no documented case of a perfect bracket in the history of the tournament.
+              <br>
+              <br>
+             Our goal for this project is to accurately predict a March Madness bracket for the upcoming 2014 tournament. We will use a number of machine learning techniques and attempt to identify the characteristics that determine a team’s success in the tournament.
+              <br>
+              <br>
+              To construct our bracket, we will ask the following questions in our experiments:    
+                <ul class='content-list'>
+                  <li>
+                    Which are the most important statistics about a team that determine its likelihood to win a game?
+                  </li>
+                  <li>
+                    Which classifiers will give us a model with stronger performance? A decision tree or logistic regression?
+                  </li>
+                  <li>
+                    How accurately can we predict the outcome of a game given each team’s season statistics? Is it as least better than chance (50%)? 
+                  </li>
+                </ul>         
+            </p>
+
           </div>
         </div>
     </div> <!-- end overview -->
@@ -97,8 +122,22 @@
       <a class="anchor" id="data"></a>
         <div class="row">
           <div class="col-lg-12">
-            <h1>data</h1>
-            <p class="lead">Using Machine Learning Techniques</p>
+            <h1>Data</h1>
+             <p class="content">
+              Working with sports data is both a blessing and a curse - there are a countless number of websites available that provide data but it is not always provided in an structured format that fits the user’s specific needs. We surveyed a number of available sports data sites but we ultimately opted for Statsheet because the data was provided in a relatively structured format that made it straightforward to scrape. 
+              <br>
+              <br>
+              Our dataset consists of information from Statsheet’s NCAAB site (http://statsheet.com/mcb) for the 2012-2013 season. The set contains all 351 NCAAB D1 teams, their conference schedule games (a total of 3207 games), and their season long statistics (54 for each team). The team statistics are a combination of binary, continuous and discrete variables that we are using as a feature set to represent each individual team. A sample of the types of features that we collected include but are not limited to:
+              <ul class='content-list'>
+                  <li>Total Games</li>
+                  <li>Winning Pct</li>
+                  <li>Possessions Per 40 minutes</li>
+                  <li>Floor Pct</li>
+                  <li>Efficiency</li>
+                  <li>Field Goal Pct</li>
+                  <li>Free Throw Attempts</li>
+                </ul>         
+            </p>
           </div>
         </div>
     </div> <!-- end data -->
@@ -107,7 +146,7 @@
       <a class="anchor" id="experiment"></a>
         <div class="row">
           <div class="col-lg-12">
-            <h1>experiment</h1>
+            <h1>Experiment</h1>
             <p class="lead">Using Machine Learning Techniques</p>
           </div>
         </div>
@@ -118,7 +157,7 @@
       <a class="anchor" id="results"></a>
         <div class="row">
           <div class="col-lg-12">
-            <h1>results</h1>
+            <h1>Results and Analysis</h1>
             <p class="lead">Using Machine Learning Techniques</p>
           </div>
         </div>
@@ -128,7 +167,7 @@
       <a class="anchor" id="conclusions"></a>
         <div class="row">
           <div class="col-lg-12">
-            <h1>conclusions</h1>
+            <h1>Conclusions</h1>
             <p class="lead">Using Machine Learning Techniques</p>
           </div>
         </div>
