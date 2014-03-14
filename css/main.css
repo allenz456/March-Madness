@@ -46,8 +46,10 @@ p.content {
 	padding-left: 60px;
 }
 
-
-
+.exp-diagram {
+	height:375px;
+	/*width: 800px;*/
+}
 
 
 

@@ -124,7 +124,7 @@
                     Which are the most important statistics about a team that determine its likelihood to win a game?
                   </li>
                   <li>
-                    Which classifiers will give us a model with stronger performance? A decision tree or logistic regression?
+                   Which classifiers will give us a model with stronger performance - decision tree, neural net, or logistic regression?
                   </li>
                   <li>
                     How accurately can we predict the outcome of a game given each team’s season statistics? Is it as least better than chance (50%)? 
@@ -184,13 +184,17 @@
               In order to conduct our experiments, we needed to create instances representing the games that occurred from the data that we collected. season. To create an instance, we looked at our game data, which was formatted in the following format:
             </p>
                 <ul class='content-list'>
-                  <li>home team, away team, outcome for home team <b>[maybe use screenshot here]</b></li>
+                  <li>home team, away team, outcome for home team</li>
                 </ul>
               <br>
           <p class="content">
               Using this information, we queried our data to find the season statistics for each team, giving us a set of numeric values describing each team. Next in order to model the actual game, we took the difference of the stats between the respective teams (home team stats - away team stats) and appended the outcome of the game to it. This gave us a numerical representation of a game that we could use as a training example to feed into a classifier model. 
           </p>
-              <p style ="font-size:30px; text-align:center;">[image / screenshots from excel showing what we did]
+              <p style ="font-size:14px; text-align:center;">
+                <!-- [image / screenshots from excel showing what we did] -->
+                <img src="img/exp_diagram.jpg" class="exp-diagram">
+                <br>
+                Outline of how we constructed our training examples (not all of our features are included in this diagram).
               </p>
               <br>
           <p class="content">
