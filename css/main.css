@@ -9,6 +9,10 @@ html,body {
 	padding-top: 40px;
 }
 
+.heading {
+	/*border-bottom: 1px solid black;*/
+}
+
 a.anchor{
 	display: block; 
 	position: relative; 
@@ -35,8 +39,12 @@ p.content {
 	font-weight: 200;
 }
 
-
-
+.overview-image {
+	height:250px;
+	/*width:400px;*/
+	/*text-align: center;*/
+	padding-left: 60px;
+}
 
 
 
