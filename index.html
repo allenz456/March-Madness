@@ -72,8 +72,8 @@
                   EECS 349 - Winter 2014
                   <br>
                   <ul class='content-list'>
-                    <li>Rich Chang</li>
                     <li>Allen Zeng</li>
+                    <li>Rich Chang</li>
                   </ul>
                 </p>
               </div>
@@ -91,7 +91,7 @@
         <div class="row">
           <div class="col-lg-12">
             <p class="content">
-              March Madness is a NCAA Division I Basketball tournament that was founded in 1939 and has been played annually since. The tournament traditionally runs from the middle of March to the end of April and features the top 68 teams from around country.
+              March Madness is a NCAA Division I Basketball tournament that was founded in 1939 and has been played annually since. The tournament traditionally runs from the middle of March to the end of April and features the top 68 teams from around the country.
               <br>
               <br>
               Filling out a March Madness bracket has been somewhat of an American tradition, with a history of high offers for anyone who can fill out a perfect bracket. In 2012, Fox Sports offered $1 million to anyone who could do it, and for this upcoming season, Warren Buffett offered $1 billion. Sadly, there has been no documented case of a perfect bracket in the history of the tournament.
@@ -162,7 +162,23 @@
         <div class="row">
           <div class="col-lg-12">
             <h1>Experiment</h1>
-            <p class="lead">Using Machine Learning Techniques</p>
+            <p class="content">
+              In order to conduct our experiments, we needed to create instances representing the games that occurred from the data that we collected. season. To create an instance, we looked at our game data, which was formatted in the following format:
+            </p>
+                <ul class='content-list'>
+                  <li>home team, away team, outcome for home team <b>[maybe use screenshot here]</b></li>
+                </ul>
+              <br>
+          <p class="content">
+              Using this information, we queried our data to find the season statistics for each team, giving us a set of numeric values describing each team. Next in order to model the actual game, we took the difference of the stats between the respective teams (home team stats - away team stats) and appended the outcome of the game to it. This gave us a numerical representation of a game that we could use as a training example to feed into a classifier model. 
+          </p>
+              <p style ="font-size:30px; text-align:center;">[image / screenshots from excel showing what we did]
+              </p>
+              <br>
+          <p class="content">
+              Our rationale behind modeling a game in this format was because it was a reasonable (and simple) way to represent a matchup between two teams - it is the difference in team skill (which we are representing as their season statistics) that ultimately decides which team wins in a basketball game. Intuitively, modeling a game in this way makes sense - a team that has a consistently higher average points per game is more likely to defeat a team that has a much lower average points per game.
+
+            </p>
           </div>
         </div>
     </div> <!-- end experiment -->
