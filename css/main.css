@@ -51,6 +51,15 @@ p.content {
 	/*width: 800px;*/
 }
 
+.bracket-diagram {
+	height:375px;
+	/*width: 800px;*/
+	text-align: center;
+}
+
+.results-diagram {
+	height:200px;
+}
 
 
 
