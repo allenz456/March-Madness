@@ -41,19 +41,15 @@ p.content {
 
 .overview-image {
 	height:250px;
-	/*width:400px;*/
-	/*text-align: center;*/
 	padding-left: 60px;
 }
 
 .exp-diagram {
 	height:375px;
-	/*width: 800px;*/
 }
 
 .bracket-diagram {
 	height:375px;
-	/*width: 800px;*/
 	text-align: center;
 }
 
