@@ -85,7 +85,6 @@
         <div class="row">
           <div class="col-lg-12 heading">
             <h1>Overview</h1>
-            <!-- <p class="lead">Using Machine Learning Techniques</p> -->
           </div>
         </div>
         <div class="row">
@@ -137,9 +136,6 @@
           <div class="col-lg-12">
             <h1>Data</h1>
              <p class="content">
-              Working with sports data is both a blessing and a curse - there are a countless number of websites available that provide data but it is not always provided in an structured format that fits the user’s specific needs. We surveyed a number of available sports data sites and ultimately opted for Statsheet because the data was provided in a relatively structured format that made it straightforward to scrape. 
-              <br>
-              <br>
               Our dataset consists of information from <a href='http://statsheet.com/mcb' target='blank'>Statsheet’s NCAAB site</a> for the 2012-2013 season. The set contains all 351 NCAAB D1 teams, their conference schedule games (a total of 3207 games), and their season long statistics (54 for each team). The team statistics are a combination of binary, continuous and discrete variables that we are using as a feature set to represent each individual team. A sample of the types of features that we collected include but are not limited to:
               <div class="row">
                   <div class="col-lg-6">
@@ -176,44 +172,19 @@
           <div class="col-lg-12">
             <h1>Experiment</h1>
             <p class="content">
-              In order to conduct our experiments, we needed to create instances representing the games that occurred from the data that we collected. season. To create an instance, we looked at our game data, which was formatted in the following format:
-            </p>
-                <ul class='content-list'>
-                  <li>home team, away team, outcome for home team</li>
-                </ul>
-              <br>
-          <p class="content">
-              Using this information, we queried our data to find the season statistics for each team, giving us a set of numeric values describing each team. Next in order to model the actual game, we took the difference of the stats between the respective teams (home team stats - away team stats) and appended the outcome of the game to it. This gave us a numerical representation of a game that we could use as a training example to feed into a classifier model. 
+              In order to conduct our experiments, we needed to create instances representing the games that occurred from the data that we collected. season. We queried our data to find the season statistics for each team and took the difference of the stats between the respective teams (home team stats - away team stats) before appending the outcome of the game to it. This gave us a numerical representation of a game that we could use as a training example to feed into a classifier model. 
           </p>
               <p style ="font-size:14px; text-align:center;">
-                <!-- [image / screenshots from excel showing what we did] -->
                 <img src="img/exp_diagram.jpg" class="exp-diagram">
                 <br>
                 Figure 1. Outline of how we constructed our training examples (not all of our features are included in this diagram).
               </p>
               <br>
           <p class="content">
-              Our rationale behind modeling a game in this format was because it was a reasonable (and simple) way to represent a matchup between two teams - it is the difference in team skill (which we are representing as their season statistics) that ultimately decides which team wins in a basketball game. Intuitively, modeling a game in this way makes sense - a team that has a consistently higher average points per game is more likely to defeat a team that has a much lower average points per game.
-
-            </p>
-          <br>
-          <p class="content">
             To test the accuracy of our models, we used the games from the 2012-2013 March Madness tournament and generated test instances following the same method as with the training examples.
           </p>
           <br>
-          <p class="content">
-            Once we had our training examples and test data, we conducted our experiment as follows:
-          </p>
-              <ul class='content-list'>
-                <li>Establish a baseline accuracy using the ZeroR classifier model in Weka</li>
-                <li>Explore other classifier models in Weka and evaluate their performance
-                  <ul class='content-list'>
-                    <li>we looked at both the accuracies on cross validation (10-fold) and the test set</li>
-                  </ul>
-                </li>
-                <li>Further refined our features (eliminate redundant attributes if applicable) and classifier model selection</li>
-              </ul>
-          </div>
+         </div>
         </div>
     </div> <!-- end experiment -->
 
@@ -222,21 +193,15 @@
         <div class="row">
           <div class="col-lg-12">
             <h1>Results and Analysis</h1>
-            <p class="content">
-              After trying different models, the Naive Bayes classifier had the best percentage on 2013 March Madness tournament, predicting 71.6% of the games correctly. Naive Bayes is an optimal choice for our classifier not only because it had the best percentage, but because all of our features are numeric, the nature of how Naive Bayes is calculated synchronizes with our data. Naive Bayes relies on the probabilities calculated through the mean and standard deviation of a feature. 
-            </p>
-            <p style ="font-size:14px; text-align:center;">
+                        <p style ="font-size:14px; text-align:center;">
               <img src="img/results.jpg" class="results-diagram">
               <br>
               Table 1. The different classifiers we tested and their results.
             </p>
-              <br>
             <p class="content">
-              The problem with decision trees is that will numeric values, it would overfit our data to too specific numeric values. Therefore, we saw a very high success rate for our J48 tree (72%), but a rate that was worse than our ZeroR rate on the actual 2013 March Madness tournament (55%).
-              <br>
-              <br>
-              Once we chose the Naive Bayes classifier, we attempted to use less features on the classifier, in hopes a simpler model would be better. Unfortunately, after trying to get rid of many different features, we either were left with the same accuracy or worse. This is logical though, because all the of statistics we recorded are major statistics. Even getting rid of number of Disqualifications a team gets, what we thought was a rare and minor feature in our data, dropped our success rate to 70.15%.
+              After trying different models, the Naive Bayes classifier had the best percentage on 2013 March Madness tournament, predicting 71.6% of the games correctly. Naive Bayes is an optimal choice for our classifier not only because it had the best percentage, but because all of our features are numeric, the nature of how Naive Bayes is calculated synchronizes with our data. 
             </p>
+              <br>
             <p style ="font-size:14px; text-align:center;">
               <img src="img/bracket-final.png" class="bracket-diagram">
               <br>
@@ -252,7 +217,7 @@
           <div class="col-lg-12">
             <h1>Conclusions</h1>
             <p class="content">
-              Although 71.6% isn’t a bad percentage for classifiers, it probably won’t be good enough to predict 100% accuracy for a March Madness bracket. After filling out the 2013 bracket, we can see some flaws in our predictor. For instance, we predicted Creighton to beat Duke. This is due to the fact that Creighton had very high statistics because it’s conference is easier than Duke’s. However, in the same bracket we see that we correctly picked Wichita (#9) to upset Pittsburgh (#8) and Iowa (#10) to upset Notre Dame (#7). Most dramatically, we correctly picked FGCU (#15) to upset Georgetown (#2). Therefore, we can see some fruit in our classifier.
+              Although 71.6% isn’t a bad percentage for classifiers, it probably won’t be good enough to predict 100% accuracy for a March Madness bracket. After filling out the 2013 bracket, we can see some flaws in our predictor but some merit as well. Our classifier missed some "obvious" calls (higher ranked team vs lower ranked) but performed well in some areas (predicted a few upsets).
               <br>
               <br>
                For future work, we should include some type of measure for how difficult a conference is to weight statistics accordingly. Additionally, if we could include player statistics also, this would probably create better accuracy, as player matchups in basketball are very important.
